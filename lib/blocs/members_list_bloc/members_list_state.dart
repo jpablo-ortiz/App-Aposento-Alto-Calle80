@@ -7,8 +7,6 @@ abstract class MembersListState extends Equatable {
   List<Object> get props => [];
 }
 
-class MembersListInitial extends MembersListState {}
-
 class MembersListLoading extends MembersListState {}
 
 class MembersListError extends MembersListState {

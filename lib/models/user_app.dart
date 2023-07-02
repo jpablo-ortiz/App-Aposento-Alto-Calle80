@@ -127,4 +127,18 @@ class UserApp extends Equatable {
       birthDate,
     ];
   }
+
+  String get realUsedName {
+    if (names != null && names!.isNotEmpty) {
+      var name = names!;
+      if (lastNames != null && lastNames!.isNotEmpty) {
+        name += " ${lastNames!}";
+      }
+      return name;
+    } else if (username != null && username!.isNotEmpty) {
+      return username!;
+    } else {
+      return email!;
+    }
+  }
 }

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MembersListScreen extends StatelessWidget {
-  const MembersListScreen({Key? key}) : super(key: key);
+  const MembersListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class _MembersListViewState extends State<MembersListView> {
   @override
   void initState() {
     super.initState();
-    _membersListBloc = BlocProvider.of<MembersListBloc>(context);
+    _membersListBloc = BlocProvider.of<MembersListBloc>(context)..add(LoadMembersList());
   }
 
   @override
@@ -42,11 +42,8 @@ class _MembersListViewState extends State<MembersListView> {
     return BlocBuilder<MembersListBloc, MembersListState>(
       bloc: _membersListBloc,
       builder: (context, state) {
-        if (state is MembersListInitial) {
-          _membersListBloc.add(LoadMembersList());
-        }
         if (state is MembersListLoading) {
-          const Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         }
@@ -73,6 +70,7 @@ class _MembersListViewState extends State<MembersListView> {
     );
   }
 }
+
 /*
 class ListaMiembros extends StatelessWidget {
   @override

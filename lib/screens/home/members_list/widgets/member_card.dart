@@ -14,15 +14,25 @@ class MemberCard extends StatelessWidget {
       child: Card(
         margin: const EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
         child: ListTile(
-          //title: Text(user.nombres + " " + user.apellidos),
-          title: Text(user.names ?? user.username ?? ""),
+          title: Text(user.realUsedName),
           subtitle: Text(user.email!),
-          leading: const CircleAvatar(
-            radius: 25.0,
-            backgroundColor: kPrimaryColor, //ColorPrimarioClaro,
-          ),
+          leading: _getImageProvider(),
         ),
       ),
     );
+  }
+
+  Widget _getImageProvider() {
+    if (user.photoUrl != null) {
+      return CircleAvatar(
+        radius: 25.0,
+        backgroundImage: NetworkImage(user.photoUrl!),
+      );
+    } else {
+      return const CircleAvatar(
+        radius: 25.0,
+        backgroundColor: kPrimaryColor, //ColorPrimarioClaro,
+      );
+    }
   }
 }

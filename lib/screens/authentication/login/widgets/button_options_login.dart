@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import 'package:app_aposento_alto_calle80/blocs/login_bloc/login_bloc.dart';
 import 'package:app_aposento_alto_calle80/screens/authentication/login/widgets/division.dart';
 import 'package:app_aposento_alto_calle80/screens/authentication/login/widgets/social_icon.dart';
@@ -21,32 +23,41 @@ class ButtonOptionsLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        // Button Login
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 10),
-          width: Get.size.width * 0.9,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(29),
-            child: ElevatedButton(
-              onPressed: onLoginButtonPressed,
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(KButtonAuthColor),
-              ),
-              child: const Text(
-                "LOGIN",
-                style: TextStyle(color: Colors.white),
-              ),
+      children: _childrensToShow(context),
+    );
+  }
+
+  List<Widget> _childrensToShow(context) {
+    List<Widget> childrens = [
+      // Button Login
+      Container(
+        margin: const EdgeInsets.symmetric(vertical: 10),
+        width: Get.size.width * 0.9,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(29),
+          child: ElevatedButton(
+            onPressed: onLoginButtonPressed,
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(KButtonAuthColor),
+            ),
+            child: const Text(
+              "LOGIN",
+              style: TextStyle(color: Colors.white),
             ),
           ),
         ),
-        SizedBox(height: Get.size.height * 0.01),
-        // YaTengoUnaCuenta
-        YaTengoUnaCuenta(
-          press: () => Get.toNamed('/sign_up'),
-          login: true,
-        ),
-        const Division(),
+      ),
+      SizedBox(height: Get.size.height * 0.01),
+      // YaTengoUnaCuenta
+      YaTengoUnaCuenta(
+        press: () => Get.toNamed('/sign_up'),
+        login: true,
+      ),
+    ];
+
+    if (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android) {
+      childrens.add(const Division());
+      childrens.add(
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -78,7 +89,9 @@ class ButtonOptionsLogin extends StatelessWidget {
             ),
           ],
         ),
-      ],
-    );
+      );
+    }
+
+    return childrens;
   }
 }
