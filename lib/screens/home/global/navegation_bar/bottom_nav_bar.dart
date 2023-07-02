@@ -9,8 +9,8 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 10.0, left: 10.0, right: 10.0),
-      constraints: BoxConstraints.tightFor(height: 70.0),
+      margin: const EdgeInsets.only(bottom: 10.0, left: 10.0, right: 10.0),
+      constraints: const BoxConstraints.tightFor(height: 70.0),
       child: Material(
         borderRadius: BorderRadius.circular(35),
         color: Colors.white,
@@ -19,7 +19,7 @@ class BottomNavBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.people,
                 color: Colors.black54,
                 size: 30.0,
@@ -27,16 +27,16 @@ class BottomNavBar extends StatelessWidget {
               onPressed: () => Get.toNamed('/members_list'),
             ),
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.email,
                 color: Colors.black54,
                 size: 30.0,
               ),
               onPressed: () => Get.toNamed('/complete_profile_screen'),
             ),
-            SizedBox(width: 10.0),
+            const SizedBox(width: 10.0),
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.email,
                 color: Colors.black54,
                 size: 30.0,
@@ -44,7 +44,7 @@ class BottomNavBar extends StatelessWidget {
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.account_circle,
                 color: Colors.black54,
                 size: 30.0,

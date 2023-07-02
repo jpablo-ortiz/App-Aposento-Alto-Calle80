@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 
 ThemeData lightTheme = ThemeData.light().copyWith(
   primaryColor: kPrimaryColor,
-  backgroundColor: kLightColor1,
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
       foregroundColor: kPrimaryColor,
@@ -15,9 +14,9 @@ ThemeData lightTheme = ThemeData.light().copyWith(
   ),
   colorScheme: ThemeData.light().colorScheme.copyWith(
         primary: kPrimaryColor,
-        primaryVariant: kLightColor1,
+        primaryContainer: kLightColor1,
         secondary: kSecondaryColor,
-        secondaryVariant: kLightColor2,
+        secondaryContainer: kLightColor2,
         background: kLightColor1,
         onError: kSecondaryColor,
       ),
@@ -31,8 +30,6 @@ ThemeData lightTheme = ThemeData.light().copyWith(
 
 ThemeData darkTheme = ThemeData.dark().copyWith(
   primaryColor: kPrimaryColor,
-  backgroundColor: kDarkColor1,
-  scaffoldBackgroundColor: kDarkColor1,
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
       foregroundColor: kPrimaryColor,
@@ -41,9 +38,9 @@ ThemeData darkTheme = ThemeData.dark().copyWith(
   ),
   colorScheme: ThemeData.dark().colorScheme.copyWith(
         primary: kPrimaryColor,
-        primaryVariant: kDarkColor1,
+        primaryContainer: kDarkColor1,
         secondary: kSecondaryColor,
-        secondaryVariant: kDarkColor2,
+        secondaryContainer: kDarkColor2,
         background: kDarkColor1,
         onError: kSecondaryColor,
       ),

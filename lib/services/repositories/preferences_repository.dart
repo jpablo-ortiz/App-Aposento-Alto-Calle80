@@ -26,7 +26,7 @@ class PreferencesRepositoryImpl implements PreferencesRepository {
     final String scriptCode = prefs.getString(_localeScriptCodeKey) ?? "";
     final String countryCode = prefs.getString(_localeCountryCodeKey) ?? "";
 
-    if (languageCode.isNotEmpty && languageCode.length > 0) {
+    if (languageCode.isNotEmpty && languageCode.isNotEmpty) {
       return Locale.fromSubtags(
         languageCode: languageCode,
         scriptCode: scriptCode.isEmpty ? null : scriptCode,
@@ -39,7 +39,7 @@ class PreferencesRepositoryImpl implements PreferencesRepository {
   @override
   Future<void> saveLocale(Locale? locale) async {
     final prefs = await SharedPreferences.getInstance();
-    Get.updateLocale(locale ?? Locale("und"));
+    Get.updateLocale(locale ?? const Locale("und"));
     if (locale != null) {
       await prefs.setString(_localeLanguageCodeKey, locale.languageCode);
       await prefs.setString(_localeScriptCodeKey, locale.scriptCode ?? '');

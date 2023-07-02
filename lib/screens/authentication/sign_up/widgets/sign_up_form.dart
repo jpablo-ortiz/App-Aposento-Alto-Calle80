@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
 class SignUpForm extends StatefulWidget {
-  SignUpForm({Key? key}) : super(key: key);
+  const SignUpForm({Key? key}) : super(key: key);
 
   @override
   _SignUpFormState createState() => _SignUpFormState();
@@ -39,10 +39,10 @@ class _SignUpFormState extends State<SignUpForm> {
         // if state is submitting
         if (state.isSubmitting) {
           Get.snackbar(
-            "registering".tr + '...',
+            '${"registering".tr}...',
             '',
-            icon: Icon(Icons.info),
-            backgroundColor: Get.theme.colorScheme.secondaryVariant,
+            icon: const Icon(Icons.info),
+            backgroundColor: Get.theme.colorScheme.secondaryContainer,
           );
         }
         // if state is failure
@@ -52,10 +52,10 @@ class _SignUpFormState extends State<SignUpForm> {
             '',
             icon: Icon(
               Icons.error,
-              color: Get.theme.backgroundColor,
+              color: Get.theme.colorScheme.background,
             ),
             backgroundColor: Colors.red,
-            colorText: Get.theme.backgroundColor,
+            colorText: Get.theme.colorScheme.background,
           );
         }
         // if state is success
@@ -65,7 +65,7 @@ class _SignUpFormState extends State<SignUpForm> {
       },
       builder: (context, state) {
         return Padding(
-          padding: EdgeInsets.all(paddingLarge),
+          padding: const EdgeInsets.all(paddingLarge),
           child: Form(
             child: ListView(
               children: <Widget>[
@@ -85,13 +85,13 @@ class _SignUpFormState extends State<SignUpForm> {
                 ),
 
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20.0),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       // Sign up button
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 10),
+                        margin: const EdgeInsets.symmetric(vertical: 10),
                         width: Get.size.width * 0.9,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(50),
@@ -102,7 +102,7 @@ class _SignUpFormState extends State<SignUpForm> {
                             ),
                             child: Text(
                               "sign_up".tr,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ),

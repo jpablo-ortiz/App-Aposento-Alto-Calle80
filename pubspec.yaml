@@ -45,20 +45,21 @@ dependencies:
   get_it: ^7.2.0 # To use the getIt() method to get the instance of the class
 
   #Firebase dependencies
-  firebase_core: ^1.6.0 #A necesary dependency to use any dependenci of firebase
+  firebase_core: ^2.14.0 #A necesary dependency to use any dependenci of firebase
   #firebase_analytics: ^8.3.1 #To use the analytics feature of firebase
-  firebase_auth: ^3.1.0 #To the authentication with firebase in the app
-  firebase_storage: ^10.0.1 #To store diferents files like images on firebase
+  firebase_auth: ^4.6.3 #To the authentication with firebase in the app
+  firebase_storage: ^11.2.4 #To store diferents files like images on firebase
   #firebase_database: ^7.1.2 #NoSQL database more eficient and fast response
-  cloud_firestore: ^2.5.3 #NoSQL satabase more robust, richer, faster queries and scalable
+  cloud_firestore: ^4.8.2 #NoSQL satabase more robust, richer, faster queries and scalable
 
   #Other dependencies
-  google_sign_in: ^5.1.0 #To allowws the google authentication
+  google_sign_in: ^6.1.4 #To allowws the google authentication
   #flutter_auth_buttons: ^0.10.0 #To use the flutter_auth_buttons package
   flutter_svg: ^0.23.0+1 # Tools to use images format svg
   image_picker: ^0.8.4
   cached_network_image: ^3.1.0
   flutter_spinkit: ^5.1.0
+  rxdart: ^0.27.7
 
 dev_dependencies:
   flutter_test:
@@ -83,9 +84,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/
+    - assets/images/
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

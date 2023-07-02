@@ -23,8 +23,8 @@ class InputFieldRedondo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       width: Get.size.width * 0.8,
       decoration: BoxDecoration(
         color: kLightColor1,
@@ -38,7 +38,7 @@ class InputFieldRedondo extends StatelessWidget {
         autocorrect: false,
         obscureText: obscureText,
         cursorColor: KButtonAuthColor,
-        style: TextStyle(color: KButtonAuthColor),
+        style: const TextStyle(color: KButtonAuthColor),
         decoration: InputDecoration(
           icon: Icon(
             icon,
@@ -46,9 +46,9 @@ class InputFieldRedondo extends StatelessWidget {
           ),
           labelText: labelText,
           hintText: hintText,
-          hintStyle: TextStyle(color: Colors.black26),
-          errorStyle: TextStyle(color: KButtonAuthColor),
-          errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: KButtonAuthColor)),
+          hintStyle: const TextStyle(color: Colors.black26),
+          errorStyle: const TextStyle(color: KButtonAuthColor),
+          errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: KButtonAuthColor)),
           border: InputBorder.none,
         ),
       ),

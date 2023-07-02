@@ -12,7 +12,7 @@ part 'signup_event.dart';
 part 'signup_state.dart';
 
 class SignupBloc extends Bloc<SignupEvent, SignupState> {
-  AuthenticationRepository _authenticationRepository;
+  final AuthenticationRepository _authenticationRepository;
 
   SignupBloc()
       : _authenticationRepository = getIt.get<AuthenticationRepository>(),

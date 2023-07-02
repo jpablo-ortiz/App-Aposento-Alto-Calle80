@@ -15,7 +15,7 @@ class SignUpScreen extends StatelessWidget {
         create: (context) => SignupBloc(),
         child: PantallaFix(
           background: fondoGradient,
-          child: SignUpForm(),
+          child: const SignUpForm(),
         ),
       ),
     );

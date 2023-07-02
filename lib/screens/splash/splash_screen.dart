@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.indigo,
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,13 +23,11 @@ class SplashScreen extends StatelessWidget {
                 ),
               ),
               //SizedBox(height: size.height * 0.15),
-              Container(
-                child: Center(
-                  child: SpinKitCircle(
-                    duration: Duration(seconds: 2),
-                    color: Color(0x99111111),
-                    size: 80.0,
-                  ),
+              Center(
+                child: SpinKitCircle(
+                  duration: Duration(seconds: 2),
+                  color: Color(0x99111111),
+                  size: 80.0,
                 ),
               ),
             ],

@@ -38,7 +38,7 @@ class DatabaseService {
 
   Usuario _obtenerUsuarioDeSnapshot(DocumentSnapshot snapshot) {
     Map<String, dynamic> data = snapshot.data()! as Map<String, dynamic>;
-    return new Usuario(
+    return Usuario(
       nombres: data['nombres'] ?? "",
       apellidos: data['apellidos'] ?? "",
       email: data['email'] ?? "",
@@ -54,7 +54,7 @@ class DatabaseService {
     List<Usuario> a = snapshot.docs.map(
       (QueryDocumentSnapshot queryDocumentSnapshot) {
         Map<String, dynamic> data = queryDocumentSnapshot.data()! as Map<String, dynamic>;
-        return new Usuario(
+        return Usuario(
           nombres: data['nombres'] ?? "",
           apellidos: data['apellidos'] ?? "",
           email: data['email'] ?? "",

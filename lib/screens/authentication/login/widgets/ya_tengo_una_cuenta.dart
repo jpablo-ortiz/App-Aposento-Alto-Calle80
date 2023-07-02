@@ -19,14 +19,14 @@ class YaTengoUnaCuenta extends StatelessWidget {
         Text(
           // TODO - Internationalization
           login ? "¿No tienes una cuenta? " : "¿Ya tienes una cuenta? ",
-          style: TextStyle(color: KButtonAuthColor),
+          style: const TextStyle(color: KButtonAuthColor),
         ),
         GestureDetector(
           onTap: press,
           child: Text(
             // TODO - Internationalization
             login ? " Regístrate" : " Inicia sesión",
-            style: TextStyle(
+            style: const TextStyle(
               color: KButtonAuthColor,
               fontWeight: FontWeight.bold,
             ),

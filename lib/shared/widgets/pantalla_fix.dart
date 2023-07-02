@@ -5,7 +5,7 @@ class PantallaFix extends StatelessWidget {
   final Widget child;
   final Widget background;
 
-  const PantallaFix({
+  const PantallaFix({super.key, 
     required this.background,
     required this.child,
   });
@@ -13,7 +13,7 @@ class PantallaFix extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = Get.size;
-    return Container(
+    return SizedBox(
       height: size.height,
       width: double.infinity,
       child: Stack(

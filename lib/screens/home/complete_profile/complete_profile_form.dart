@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
 class CompleteProfileForm extends StatefulWidget {
-  CompleteProfileForm({Key? key}) : super(key: key);
+  const CompleteProfileForm({Key? key}) : super(key: key);
 
   @override
   _CompleteProfileFormState createState() => _CompleteProfileFormState();
@@ -32,7 +32,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       bloc: _authenticationBloc,
       builder: (context, state) {
         return Padding(
-          padding: EdgeInsets.all(paddingLarge),
+          padding: const EdgeInsets.all(paddingLarge),
           child: ListView(
             children: <Widget>[
               SizedBox(height: Get.size.height * 0.03),
@@ -42,7 +42,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
                 keyboardType: TextInputType.name,
                 autocorrect: false,
                 decoration: InputDecoration(
-                  icon: Icon(Icons.person),
+                  icon: const Icon(Icons.person),
                   labelText: "names".tr,
                 ),
               ),
@@ -53,7 +53,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
                 keyboardType: TextInputType.name,
                 autocorrect: false,
                 decoration: InputDecoration(
-                  icon: Icon(Icons.person),
+                  icon: const Icon(Icons.person),
                   labelText: "last_names".tr,
                 ),
               ),

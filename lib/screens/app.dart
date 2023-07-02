@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   final Locale? locale;
 
   const App({
-    Key? key,
+    super.key,
     required this.locale,
   });
 
@@ -39,8 +39,8 @@ class App extends StatelessWidget {
         // Aparently the GetMaterialApp doesn't support the update of the language
         // (Only on the first build)
         // So we use the Get.updateLocale(locale; in PreferenceRepository to change the language
-        locale: locale ?? Locale('es', 'ES'),
-        fallbackLocale: Locale('es', 'ES'),
+        locale: locale ?? const Locale('es', 'ES'),
+        fallbackLocale: const Locale('es', 'ES'),
         translations: Strings(),
       ),
     );

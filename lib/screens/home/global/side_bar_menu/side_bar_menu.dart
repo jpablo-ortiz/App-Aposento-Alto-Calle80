@@ -6,7 +6,6 @@ import 'package:app_aposento_alto_calle80/screens/home/global/side_bar_menu/widg
 import 'package:app_aposento_alto_calle80/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_utils/src/extensions/context_extensions.dart';
 
 class SideBarMenu extends StatelessWidget {
   final AuthenticationBloc authenticationBloc;
@@ -21,9 +20,9 @@ class SideBarMenu extends StatelessWidget {
     AuthenticationState state = authenticationBloc.state;
     if (state is Authenticated) {
       UserApp user = state.user;
-      this.name = user.names ?? user.username ?? "EXAMPLE NAME"; //"Vera Pagac";
-      this.email = user.email!; //"ortizrubio09@gmail.com";
-      this.urlImage = user.photoUrl ?? "https://images.unsplash.com/photo-1518991669955-9c7e78ec80ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+      name = user.names ?? user.username ?? "EXAMPLE NAME"; //"Vera Pagac";
+      email = user.email!; //"ortizrubio09@gmail.com";
+      urlImage = user.photoUrl ?? "https://images.unsplash.com/photo-1518991669955-9c7e78ec80ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
     }
   }
 
@@ -46,22 +45,22 @@ class SideBarMenu extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: paddingLarge),
+                  padding: const EdgeInsets.symmetric(horizontal: paddingLarge),
                   child: Column(
                     children: <Widget>[
                       SearchField(),
-                      SizedBox(height: paddingLarge),
+                      const SizedBox(height: paddingLarge),
                       MenuItemSideBar(
                         text: "people".tr,
                         icon: Icons.people,
                         onClicked: () => openScreen(name: '/home'),
                       ),
-                      SizedBox(height: paddingMedium),
+                      const SizedBox(height: paddingMedium),
                       MenuItemSideBar(
                         text: "notifications".tr,
                         icon: Icons.notifications_outlined,
                       ),
-                      SizedBox(height: paddingMedium),
+                      const SizedBox(height: paddingMedium),
                       MenuItemSideBar(
                         text: "settings".tr,
                         icon: Icons.settings_outlined,

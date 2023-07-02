@@ -9,7 +9,7 @@ class SignupState extends Equatable {
 
   bool get isFormValid => isEmailValid && isPasswordValid;
 
-  SignupState({
+  const SignupState({
     required this.isEmailValid,
     required this.isPasswordValid,
     required this.isSubmitting,
@@ -20,7 +20,7 @@ class SignupState extends Equatable {
   // States:
   // 1. Empty
   factory SignupState.empty() {
-    return SignupState(
+    return const SignupState(
       isEmailValid: true,
       isPasswordValid: true,
       isSubmitting: false,
@@ -31,7 +31,7 @@ class SignupState extends Equatable {
 
   // 2. Loading
   factory SignupState.loading() {
-    return SignupState(
+    return const SignupState(
       isEmailValid: true,
       isPasswordValid: true,
       isSubmitting: true,
@@ -42,7 +42,7 @@ class SignupState extends Equatable {
 
   // 3. Failure
   factory SignupState.failure() {
-    return SignupState(
+    return const SignupState(
       isEmailValid: true,
       isPasswordValid: true,
       isSubmitting: false,
@@ -53,7 +53,7 @@ class SignupState extends Equatable {
 
   // 4. Success
   factory SignupState.success() {
-    return SignupState(
+    return const SignupState(
       isEmailValid: true,
       isPasswordValid: true,
       isSubmitting: false,

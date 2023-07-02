@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -15,24 +15,24 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    AuthenticationBloc _authenticationBloc = BlocProvider.of<AuthenticationBloc>(context);
-    AuthenticationState state = _authenticationBloc.state;
+    AuthenticationBloc authenticationBloc = BlocProvider.of<AuthenticationBloc>(context);
+    AuthenticationState state = authenticationBloc.state;
     UserApp? userLogged = state is Authenticated ? state.user : null;
 
     return Scaffold(
       appBar: null,
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: PrincipalButtonNavBar(),
+      floatingActionButton: const PrincipalButtonNavBar(),
       body: SafeArea(
         child: Center(
           child: Column(
             children: <Widget>[
               //Text("Nombres: " + (userLogged!.name ?? "")),
               //Text("Apellidos: " + (userLogged.apellidos ?? "")),
-              Text("Username: " + (userLogged!.username ?? "")),
-              Text("Email: " + (userLogged.email!)),
-              Text("Id: " + (userLogged.id!)),
+              Text("Username: ${userLogged!.username ?? ""}"),
+              Text("Email: ${userLogged.email!}"),
+              Text("Id: ${userLogged.id!}"),
             ],
           ),
         ),

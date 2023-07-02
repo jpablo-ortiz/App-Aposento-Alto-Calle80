@@ -8,11 +8,11 @@ class CompleteProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _authBloc = BlocProvider.of<AuthenticationBloc>(context);
+    final authBloc = BlocProvider.of<AuthenticationBloc>(context);
     return Scaffold(
       body: BlocProvider.value(
-        value: _authBloc,
-        child: CompleteProfileForm(),
+        value: authBloc,
+        child: const CompleteProfileForm(),
       ),
     );
   }

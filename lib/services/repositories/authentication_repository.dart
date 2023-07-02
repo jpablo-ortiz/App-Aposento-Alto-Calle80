@@ -80,7 +80,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   })  : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
         _firestore = FirebaseFirestore.instance,
         _googleSignIn = googleSignIn ?? GoogleSignIn(),
-        _user = new StreamController<UserApp?>() {
+        _user = StreamController<UserApp?>() {
     _user.addStream(
       // userChanges is a superset of both [authStateChanges] and [idTokenChanges]
       _firebaseAuth.userChanges().map(
@@ -100,6 +100,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   //----------------------------------------------------------
 
   // Stream user -> actual user when the state of autehntication changes
+  @override
   Stream<UserApp?> get user {
     return _user.stream;
   }
@@ -109,16 +110,19 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   //----------------------------------------------------------
 
   // Obtener usuario
+  @override
   Future<UserApp> getUser() async {
     return UserApp.fromFirebaseUser(_firebaseAuth.currentUser);
   }
 
+  @override
   Future<bool> isSignedIn() async {
     final currentUser = _firebaseAuth.currentUser;
     return currentUser != null;
   }
 
   // Register user with email and password
+  @override
   Future<void> signUp(String email, String password) async {
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
@@ -131,6 +135,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   // Login with google
+  @override
   Future<void> loginWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
@@ -150,6 +155,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   // Login with email and password
+  @override
   Future<void> loginWithEmailAndPassword(String email, String password) async {
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
@@ -162,6 +168,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   // Logout
+  @override
   Future<void> logOut() async {
     try {
       await Future.wait([
@@ -178,6 +185,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   //----------------------------------------------------------
 
   // Update the user image
+  @override
   void updateUserImage(String imageUrl) {
     User? user = _firebaseAuth.currentUser!;
     user.updatePhotoURL(imageUrl);
@@ -185,10 +193,12 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     _user.sink.add(UserApp.fromFirebaseUser(user));
   }
 
+  @override
   Future<void> createUpdateAllUserInfo(UserApp userApp) async {
     return await _firestore.collection("users").doc(userApp.id).set(userApp.toMap());
   }
 
+  @override
   Future<void> updateUserInfo(String id, String names, String lastNames) async {
     return await _firestore.doc(id).update({
       "names": names,
@@ -197,6 +207,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   // A function that returns a boolean if the doc of the user exists
+  @override
   Future<bool> userExistsOnDataBase(String id) async {
     final QuerySnapshot querySnapshot = await _firestore.collection("users").get();
     bool res = querySnapshot.docs.any((doc) => doc.id == id);

@@ -12,7 +12,7 @@ part 'login_event.dart';
 part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  AuthenticationRepository _authenticationRepository;
+  final AuthenticationRepository _authenticationRepository;
 
   LoginBloc()
       : _authenticationRepository = getIt.get<AuthenticationRepository>(),

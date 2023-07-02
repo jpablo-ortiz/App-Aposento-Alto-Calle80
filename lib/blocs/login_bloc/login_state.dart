@@ -21,7 +21,7 @@ class LoginState extends Equatable {
   // Fourth states:
   // 1. Empty
   factory LoginState.empty() {
-    return LoginState(
+    return const LoginState(
       isEmailValid: true,
       isPasswordValid: true,
       isSubmitting: false,
@@ -32,7 +32,7 @@ class LoginState extends Equatable {
 
   // 2. Loading
   factory LoginState.loading() {
-    return LoginState(
+    return const LoginState(
       isEmailValid: true,
       isPasswordValid: true,
       isSubmitting: true,
@@ -43,7 +43,7 @@ class LoginState extends Equatable {
 
   // 3. Failure
   factory LoginState.failure() {
-    return LoginState(
+    return const LoginState(
       isEmailValid: true,
       isPasswordValid: true,
       isSubmitting: false,
@@ -54,7 +54,7 @@ class LoginState extends Equatable {
 
   // 4. Success
   factory LoginState.success() {
-    return LoginState(
+    return const LoginState(
       isEmailValid: true,
       isPasswordValid: true,
       isSubmitting: false,

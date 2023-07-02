@@ -94,14 +94,14 @@ class UserApp extends Equatable {
 
   factory UserApp.fromMap(Map<String, dynamic> map) {
     return UserApp(
-      id: map['id'] != null ? map['id'] : null,
-      email: map['email'] != null ? map['email'] : null,
-      username: map['username'] != null ? map['username'] : null,
-      photoUrl: map['photoUrl'] != null ? map['photoUrl'] : null,
-      names: map['names'] != null ? map['names'] : null,
-      lastNames: map['lastNames'] != null ? map['lastNames'] : null,
-      phone: map['phone'] != null ? map['phone'] : null,
-      address: map['address'] != null ? map['address'] : null,
+      id: map['id'],
+      email: map['email'],
+      username: map['username'],
+      photoUrl: map['photoUrl'],
+      names: map['names'],
+      lastNames: map['lastNames'],
+      phone: map['phone'],
+      address: map['address'],
       birthDate: map['birthDate'] != null ? DateTime.fromMillisecondsSinceEpoch(map['birthDate']) : null,
     );
   }

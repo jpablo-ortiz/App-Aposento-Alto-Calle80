@@ -12,12 +12,12 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: paddingLarge, vertical: paddingMedium),
+        contentPadding: const EdgeInsets.symmetric(horizontal: paddingLarge, vertical: paddingMedium),
         hintText: "search".tr,
-        hintStyle: TextStyle(color: Colors.white),
-        prefixIcon: Icon(Icons.search, color: Colors.white),
+        hintStyle: const TextStyle(color: Colors.white),
+        prefixIcon: const Icon(Icons.search, color: Colors.white),
         filled: true,
         fillColor: Colors.white12,
         enabledBorder: border,

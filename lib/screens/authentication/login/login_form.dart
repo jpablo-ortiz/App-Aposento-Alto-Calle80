@@ -8,7 +8,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class LoginForm extends StatefulWidget {
-  LoginForm({Key? key}) : super(key: key);
+  const LoginForm({Key? key}) : super(key: key);
 
   @override
   _LoginFormState createState() => _LoginFormState();
@@ -47,8 +47,8 @@ class _LoginFormState extends State<LoginForm> {
           Get.snackbar(
             "login_in".tr,
             '',
-            icon: Icon(Icons.info),
-            backgroundColor: Get.theme.colorScheme.secondaryVariant,
+            icon: const Icon(Icons.info),
+            backgroundColor: Get.theme.colorScheme.secondaryContainer,
           );
         }
         if (state.isFailure) {
@@ -57,16 +57,16 @@ class _LoginFormState extends State<LoginForm> {
             '',
             icon: Icon(
               Icons.error,
-              color: Get.theme.backgroundColor,
+              color: Get.theme.colorScheme.background,
             ),
             backgroundColor: Colors.red,
-            colorText: Get.theme.backgroundColor,
+            colorText: Get.theme.colorScheme.background,
           );
         }
       },
       builder: (context, state) {
         return Padding(
-          padding: EdgeInsets.all(paddingLarge),
+          padding: const EdgeInsets.all(paddingLarge),
           child: Form(
             child: ListView(
               children: <Widget>[
@@ -129,6 +129,6 @@ class _LoginFormState extends State<LoginForm> {
         password: _passwordController.text,
       ),
     );
-    await Future.delayed(Duration(seconds: 10));
+    await Future.delayed(const Duration(seconds: 10));
   }
 }

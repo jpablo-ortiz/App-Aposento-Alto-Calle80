@@ -14,19 +14,19 @@ Transition defaultTransition = Transition.cupertino;
 List<GetPage<dynamic>> routesPages = [
   GetPage(
     name: '/splash',
-    page: () => SplashScreen(),
+    page: () => const SplashScreen(),
   ),
   GetPage(
     name: '/login',
-    page: () => LoginScreen(),
+    page: () => const LoginScreen(),
   ),
   GetPage(
     name: '/sign_up',
-    page: () => SignUpScreen(),
+    page: () => const SignUpScreen(),
   ),
   GetPage(
     name: '/home',
-    page: () => HomeScreen(),
+    page: () => const HomeScreen(),
   ),
   //GetPage(
   //  name: '/settings',
@@ -35,10 +35,10 @@ List<GetPage<dynamic>> routesPages = [
   //),
   GetPage(
     name: '/members_list',
-    page: () => MembersListScreen(),
+    page: () => const MembersListScreen(),
   ),
   GetPage(
     name: '/complete_profile_screen',
-    page: () => CompleteProfileScreen(),
+    page: () => const CompleteProfileScreen(),
   ),
 ];

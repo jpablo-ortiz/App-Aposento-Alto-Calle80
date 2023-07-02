@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
         create: (context) => LoginBloc(),
         child: PantallaFix(
           background: fondoGradient,
-          child: LoginForm(),
+          child: const LoginForm(),
         ),
       ),
     );

@@ -9,7 +9,7 @@ class PrincipalButtonNavBar extends StatelessWidget {
       backgroundColor: Colors.grey.shade300,
       onPressed: () => Navigator.pushReplacementNamed(context, '/Principal'),
       tooltip: 'Increment',
-      child: Icon(
+      child: const Icon(
         Icons.home,
         color: Colors.black54,
       ),

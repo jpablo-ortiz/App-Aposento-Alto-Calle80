@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>431432157041-uee57rt27eopt9hs468a5gm9hnppsu99.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.431432157041-uee57rt27eopt9hs468a5gm9hnppsu99</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>431432157041-kie46cc0kqmg8p6jo7t1jer4b8qmt4iq.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD2ebjuBS_ZwhTnkgX_5TXoYrYSNbNuUhg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>431432157041</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.appAposentoAltoCalle80</string>
+	<key>PROJECT_ID</key>
+	<string>app-aposento-alto-calle80</string>
+	<key>STORAGE_BUCKET</key>
+	<string>app-aposento-alto-calle80.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:431432157041:ios:dd44d157c3f776379598d0</string>
+</dict>
+</plist>

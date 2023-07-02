@@ -12,7 +12,7 @@ class MembersListScreen extends StatelessWidget {
     return Scaffold(
       body: BlocProvider<MembersListBloc>(
         create: (context) => MembersListBloc(),
-        child: Padding(
+        child: const Padding(
           padding: EdgeInsets.all(paddingLarge),
           child: MembersListView(),
         ),
@@ -22,7 +22,7 @@ class MembersListScreen extends StatelessWidget {
 }
 
 class MembersListView extends StatefulWidget {
-  MembersListView({Key? key}) : super(key: key);
+  const MembersListView({Key? key}) : super(key: key);
 
   @override
   _MembersListViewState createState() => _MembersListViewState();
@@ -46,7 +46,7 @@ class _MembersListViewState extends State<MembersListView> {
           _membersListBloc.add(LoadMembersList());
         }
         if (state is MembersListLoading) {
-          Center(
+          const Center(
             child: CircularProgressIndicator(),
           );
         }
@@ -64,7 +64,7 @@ class _MembersListViewState extends State<MembersListView> {
           );
         }
         if (state is MembersListError) {
-          return Center(
+          return const Center(
             child: Text('Error'),
           );
         }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Division extends StatelessWidget {
-  Division();
+  const Division({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +13,8 @@ class Division extends StatelessWidget {
       child: Row(
         children: <Widget>[
           buildDivider(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               "O",
               style: TextStyle(
@@ -30,7 +30,7 @@ class Division extends StatelessWidget {
   }
 
   Expanded buildDivider() {
-    return Expanded(
+    return const Expanded(
       child: Divider(
         color: Color(0xFFD9D9D9),
         height: 1.5,

@@ -16,7 +16,7 @@ class AppStarted extends AuthenticationEvent {}
 class AuthenticationUserChanged extends AuthenticationEvent {
   final UserApp? user;
 
-  AuthenticationUserChanged(this.user);
+  const AuthenticationUserChanged(this.user);
 
   @override
   List<Object?> get props => [user];

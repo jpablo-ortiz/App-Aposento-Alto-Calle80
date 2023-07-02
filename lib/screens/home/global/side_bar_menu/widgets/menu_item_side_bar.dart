@@ -16,12 +16,12 @@ class MenuItemSideBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Colors.white;
-    final hoverColor = Colors.white70;
+    const color = Colors.white;
+    const hoverColor = Colors.white70;
 
     return ListTile(
       leading: Icon(icon, color: Colors.white),
-      title: Text(text, style: TextStyle(color: color)),
+      title: Text(text, style: const TextStyle(color: color)),
       subtitle: subtitle != null ? Text(subtitle!) : null,
       hoverColor: hoverColor,
       onTap: onClicked,

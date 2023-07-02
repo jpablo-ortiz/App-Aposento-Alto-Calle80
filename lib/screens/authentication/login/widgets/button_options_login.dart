@@ -24,7 +24,7 @@ class ButtonOptionsLogin extends StatelessWidget {
       children: [
         // Button Login
         Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
+          margin: const EdgeInsets.symmetric(vertical: 10),
           width: Get.size.width * 0.9,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(29),
@@ -33,7 +33,7 @@ class ButtonOptionsLogin extends StatelessWidget {
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(KButtonAuthColor),
               ),
-              child: Text(
+              child: const Text(
                 "LOGIN",
                 style: TextStyle(color: Colors.white),
               ),
@@ -46,20 +46,20 @@ class ButtonOptionsLogin extends StatelessWidget {
           press: () => Get.toNamed('/sign_up'),
           login: true,
         ),
-        Division(),
+        const Division(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SocalIcon(
               iconSrc: "assets/icons/facebook.svg",
               press: () {
-                getIt.get<PreferencesRepository>().saveLocale(Locale("en", "US"));
+                getIt.get<PreferencesRepository>().saveLocale(const Locale("en", "US"));
               },
             ),
             SocalIcon(
               iconSrc: "assets/icons/twitter.svg",
               press: () {
-                getIt.get<PreferencesRepository>().saveLocale(Locale("es", "ES"));
+                getIt.get<PreferencesRepository>().saveLocale(const Locale("es", "ES"));
               },
             ),
             SocalIcon(
@@ -68,8 +68,8 @@ class ButtonOptionsLogin extends StatelessWidget {
                 Get.snackbar(
                   "login_in".tr,
                   "login_in_with_google".tr,
-                  icon: Icon(Icons.info),
-                  backgroundColor: Get.theme.colorScheme.secondaryVariant,
+                  icon: const Icon(Icons.info),
+                  backgroundColor: Get.theme.colorScheme.secondaryContainer,
                 );
                 BlocProvider.of<LoginBloc>(context).add(
                   LoginWithGooglePressed(),

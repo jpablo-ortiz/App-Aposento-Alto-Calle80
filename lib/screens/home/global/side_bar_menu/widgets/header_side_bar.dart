@@ -18,12 +18,12 @@ class HeaderSideBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final padding = EdgeInsets.symmetric(horizontal: paddingMedium);
+    const padding = EdgeInsets.symmetric(horizontal: paddingMedium);
 
     return InkWell(
       onTap: onClick,
       child: Container(
-        padding: padding.add(EdgeInsets.symmetric(vertical: paddingXXLarge)),
+        padding: padding.add(const EdgeInsets.symmetric(vertical: paddingXXLarge)),
         child: Row(
           children: <Widget>[
             //CircleAvatar(
@@ -32,8 +32,8 @@ class HeaderSideBar extends StatelessWidget {
             //),
             CachedNetworkImage(
               imageUrl: urlImage,
-              placeholder: (context, url) => CircularProgressIndicator(),
-              errorWidget: (context, url, error) => Icon(Icons.error),
+              placeholder: (context, url) => const CircularProgressIndicator(),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
               imageBuilder: (context, imageProvider) => Container(
                 width: 80.0,
                 height: 80.0,
@@ -43,19 +43,19 @@ class HeaderSideBar extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: paddingMedium),
+            const SizedBox(width: paddingMedium),
             Flexible(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
                     name,
-                    style: TextStyle(color: Colors.white, fontSize: textSizeLarge),
+                    style: const TextStyle(color: Colors.white, fontSize: textSizeLarge),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     email,
-                    style: TextStyle(color: Colors.white, fontSize: textSizeSmall2),
+                    style: const TextStyle(color: Colors.white, fontSize: textSizeSmall2),
                   ),
                 ],
               ),
